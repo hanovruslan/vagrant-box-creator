@@ -1,0 +1,10 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    config.vm.define $name do |machine|
+        machine.ssh.insert_key = false
+        machine.ssh.private_key_path = File.expand_path("fake-id_rsa", File.dirname(__FILE__))
+        machine.vm.synced_folder "./", "/vagrant", disabled: true
+    end
+end
