@@ -11,7 +11,7 @@ Vagrant has [package](https://www.vagrantup.com/docs/cli/package.html) action wh
 
 1. Create build-time vagrantfile (build-time.vagrantfile)
 1. Create runtime vagrantfile (runtime.vagrantfile)
-1. ./pack.sh build-time /path/to/the/project/build-time.dir (not build-time.vagrantfile!)
+1. ./create-box.sh build-time /path/to/the/project/build-time.dir (not build-time.vagrantfile!)
 1. cd /path/to/the/project/ && vagrant up --provision
 
 ### Examples ###
