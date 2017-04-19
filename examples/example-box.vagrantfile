@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    config.vm.define "example" do |box|
+        box.vm.box = "debian/jessie64"
+        box.vm.hostname = "example"
+        box.vm.provider :virtualbox do |provider|
+            provider.name = "example"
+            provider.memory = 512
+            provider.cpus = 1
+        end
+    end
+end
