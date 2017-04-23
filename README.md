@@ -26,5 +26,5 @@ Vagrant has [package](https://www.vagrantup.com/docs/cli/package.html) action wh
     1. ```./vagrant-up.sh my-debian```
     1. ```./vagrant-status.sh my-debian```
     1. ```./vagrant-ssh.sh example```
-1. example from custom dir (```cd /tmp```):
-    1. ```
+1. example from custom dir (```cd -R examples /tmp/```):
+    1. ```./create-box.sh my-debian /tmp/examples/```
