@@ -1,9 +1,9 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-$name = ENV.key?("name") ? ENV["name"] : "example"
-file = ENV.key?("file") ? ENV["file"] : $name + ".vagrantfile"
-path = ENV.key?("path") ? ENV["path"] : File.expand_path("./examples", File.dirname(__FILE__))
+$machine_name = ENV.key?("machine_name") ? ENV["machine_name"] : "default"
+$vagrantfile = ENV.key?("vagrantfile") ? ENV["vagrantfile"] : $machine_name + ".vagrantfile"
+$vagrantfile_path = ENV.key?("vagrantfile_path") ? ENV["vagrantfile_path"] : File.expand_path("./examples", File.dirname(__FILE__))
 
-load File.expand_path(file, path)
+load File.expand_path($vagrantfile, $vagrantfile_path)
 load File.expand_path("create-box-post-action.vagrantfile", File.dirname(__FILE__))

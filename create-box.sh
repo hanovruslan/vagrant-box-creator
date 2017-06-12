@@ -1,22 +1,23 @@
 #!/usr/bin/env bash
 
-name=${1:-example}
-path="${2:-./examples}"
-file=${3:-${name}-box.vagrantfile}
-box_path=${4:-./boxes}
-provider=virtualbox
+source vagrant-common.sh
 
-export name=${name} \
-&& export path=${path} \
-&& export file=${file} \
-&& vagrant destroy -f \
+vagrantfile="${3:-${machine_name}-box.vagrantfile}"
+provider="virtualbox"
+root_path="./boxes"
+box_path="${root_path}/${machine_name}.box"
+box_id_path=".vagrant/machines/${machine_name}/${provider}/id"
+
+export vagrantfile
+
+vagrant destroy -f \
 && vagrant up --provision \
 && vagrant box update \
-&& rm -f ${box_path}/${name}.box \
-&& realpath .vagrant/machines/${name}/${provider}/id 1>/dev/null 2 >&1 \
+&& rm -f "${box_path}" \
+&& realpath "${box_id_path}" 1>/dev/null 2 >&1 \
 && vagrant package \
-  --base $(cat .vagrant/machines/${name}/${provider}/id) \
-  --output ${box_path}/${name}.box \
-&& vagrant box add --force ${name} ${box_path}/${name}.box \
-&& rm -f ${box_path}/${name}.box \
+  --base "$(cat ${box_id_path})" \
+  --output "${box_path}" \
+&& vagrant box add --force "${machine_name}" "${box_path}" \
+&& rm -f "${box_path}" \
 && vagrant destroy -f
