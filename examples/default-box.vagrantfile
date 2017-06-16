@@ -2,11 +2,11 @@
 # vi: set ft=ruby :
 
 Vagrant.configure(2) do |config|
-    config.vm.define "my-debian" do |machine|
+    config.vm.define "default" do |machine|
         machine.vm.box = "debian/jessie64"
-        machine.vm.hostname = "my-debian"
+        machine.vm.hostname = "default"
         machine.vm.provider :virtualbox do |provider|
-            provider.name = "my-debian"
+            provider.name = "default"
             provider.memory = 512
             provider.cpus = 1
         end
