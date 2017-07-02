@@ -17,14 +17,14 @@ Vagrant has [package](https://www.vagrantup.com/docs/cli/package.html) action wh
 ### Examples ###
 
 1. default example:
-    1. ```./create-box.sh```
-    1. ```vagrant up --provision``` or ```./vagrant-up.sh```
-    1. ```vagrant status``` or ```./vagrant-status.sh```
-    1. ```vagrant ssh``` or ```vagrant ssh default``` or ```./vagrant-ssh.sh default```
+    1. ```./src/create-box.sh```
+    1. ```vagrant up --provision``` or ```./src/vagrant-up.sh```
+    1. ```vagrant status``` or ```./src/vagrant-status.sh```
+    1. ```vagrant ssh``` or ```vagrant ssh default``` or ```./src/vagrant-ssh.sh default```
 1. other example:
-    1. ```./create-box.sh my-debian```
-    1. ```./vagrant-up.sh my-debian```
-    1. ```./vagrant-status.sh my-debian```
-    1. ```./vagrant-ssh.sh default```
+    1. ```./src/create-box.sh my-debian```
+    1. ```./src/vagrant-up.sh my-debian```
+    1. ```./src/vagrant-status.sh my-debian```
+    1. ```./src/vagrant-ssh.sh default```
 1. example from custom dir (```cp -R examples /tmp/```):
-    1. ```./create-box.sh my-debian /tmp/examples/```
+    1. ```./src/create-box.sh my-debian /tmp/examples/```

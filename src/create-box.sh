@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-source vagrant-common.sh
+self_dir=$(dirname $(readlink -f ${0}))
+
+source ${self_dir}/vagrant-common.sh
 
 vagrantfile="${3:-${machine_name}-box.vagrantfile}"
 provider="virtualbox"
