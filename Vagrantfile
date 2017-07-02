@@ -6,4 +6,4 @@ $vagrantfile = ENV.key?("vagrantfile") ? ENV["vagrantfile"] : $machine_name + ".
 $vagrantfile_path = ENV.key?("vagrantfile_path") ? ENV["vagrantfile_path"] : File.expand_path("./examples", File.dirname(__FILE__))
 
 load File.expand_path($vagrantfile, $vagrantfile_path)
-load File.expand_path("create-box-post-action.vagrantfile", File.dirname(__FILE__))
+load File.expand_path("vagrant/Vagrantfile", File.dirname(__FILE__))
