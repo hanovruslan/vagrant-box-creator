@@ -1,0 +1,14 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    config.vm.define "ubuntu" do |machine|
+        machine.vm.box = "ubuntu/trusty64"
+        machine.vm.hostname = "ubuntu"
+        machine.vm.provider :virtualbox do |provider|
+            provider.name = "ubuntu"
+            provider.memory = 512
+            provider.cpus = 1
+        end
+    end
+end

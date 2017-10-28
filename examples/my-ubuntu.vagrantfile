@@ -1,0 +1,13 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+    config.vm.define "my-ubuntu" do |machine|
+        machine.vm.box = "my-ubuntu"
+        machine.vm.hostname = "my-ubuntu"
+        machine.vm.provider :virtualbox do |provider|
+            provider.name = "my-ubuntu"
+        end
+        machine.vm.network :private_network, type: "dhcp"
+    end
+end
