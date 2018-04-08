@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-_source="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
+self_dir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
 
-source "${_source}/env.sh"
-source "${_source}/external/bash-get-options/src/src.sh"
+source "${self_dir}/env.sh"
+source "${self_dir}/bash-dep/bash-get-options/src/src.sh"
 
 declare -A options_dict=(
   [f]=file
