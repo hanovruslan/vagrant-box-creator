@@ -1,5 +1,3 @@
 /.vagrant*
 /boxes/*
 !/boxes/.gitkeep
-/src/external/*
-!/src/external/.gitkeep
