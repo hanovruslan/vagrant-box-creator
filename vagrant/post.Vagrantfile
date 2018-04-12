@@ -1,6 +1,5 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-
 Vagrant.configure(2) do |config|
     config.vm.define $machine do |machine|
         machine.vm.hostname = $machine
