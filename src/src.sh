@@ -1,4 +1,6 @@
 #@IgnoreInspection BashAddShebang
+self_dir="$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
+source "${self_dir}/env.sh"
 vbc_main () {
   local machine="${1}"
   local box_path="$(vbc_get_box_path ${machine})"
@@ -21,5 +23,5 @@ vbc_get_box_path() {
 }
 vbc_get_box_id_path () {
   local machine="${1}"
-  echo ".vagrant/machines/${machine}/${VBC_PROVIDER}/id"
+  echo "${self_dir}/../.vagrant/machines/${machine}/${VBC_PROVIDER}/id"
 }

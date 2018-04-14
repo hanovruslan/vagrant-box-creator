@@ -1,9 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+$machine = $machine || "default"
 Vagrant.configure(2) do |config|
     config.vm.box_version = "9.4.0"
     config.vm.define $machine do |machine|
-        machine.vm.box = $box
+        machine.vm.box = "debian/stretch64"
         machine.vm.hostname = $machine
         machine.vm.provider :virtualbox do |provider|
             provider.name = $machine
